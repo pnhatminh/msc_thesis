@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper,openright]{report}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{vietnamese}
+\setotherlanguage{english}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  pdftitle={Luận văn thạc sĩ}
+}
+
+\newcommand{\university}{Tên trường đại học}
+\newcommand{\faculty}{Tên khoa}
+\newcommand{\department}{Tên bộ môn}
+\newcommand{\program}{Chương trình thạc sĩ}
+\newcommand{\thesistitle}{Tên luận văn thạc sĩ}
+\newcommand{\studentname}{Họ và tên học viên}
+\newcommand{\studentid}{Mã số học viên}
+\newcommand{\supervisor}{Giảng viên hướng dẫn}
+\newcommand{\submissionplace}{Thành phố Hồ Chí Minh}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+  \centering
+  {\Large \university\par}
+  \vspace{0.25cm}
+  {\large \faculty\par}
+  \vspace{0.15cm}
+  {\large \department\par}
+  \vfill
+  {\Large \bfseries LUẬN VĂN THẠC SĨ\par}
+  \vspace{0.8cm}
+  {\LARGE \bfseries \thesistitle\par}
+  \vspace{1.2cm}
+  \begin{flushleft}
+    \large
+    Học viên: \studentname\\
+    Mã số: \studentid\\
+    Chương trình: \program\\
+    Giảng viên hướng dẫn: \supervisor
+  \end{flushleft}
+  \vfill
+  {\large \submissionplace, \the\year\par}
+\end{titlepage}
+
+\chapter*{Lời cam đoan}
+\addcontentsline{toc}{chapter}{Lời cam đoan}
+Nội dung cam đoan của học viên.
+
+\chapter*{Lời cảm ơn}
+\addcontentsline{toc}{chapter}{Lời cảm ơn}
+Nội dung lời cảm ơn.
+
+\chapter*{Tóm tắt}
+\addcontentsline{toc}{chapter}{Tóm tắt}
+Tóm tắt ngắn gọn mục tiêu, phương pháp, kết quả và đóng góp chính của luận văn.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Short English abstract of the thesis.
+
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+\pagenumbering{arabic}
+\include{chapters/introduction}
+\include{chapters/literature_review}
+\include{chapters/methodology}
+\include{chapters/results}
+\include{chapters/conclusion}
+
+\appendix
+\include{chapters/appendix_a}
+
+\end{document}
