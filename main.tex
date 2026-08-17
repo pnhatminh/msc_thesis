@@ -8,10 +8,18 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{longtable}
+\usepackage{csquotes}
+\DeclareQuoteAlias{fallback}{vietnamese}
 \usepackage{hyperref}
+\usepackage[backend=biber,style=apa]{biblatex}
+\DeclareLanguageMapping{vietnamese}{english-apa}
+\addbibresource{references.bib}
+\AtBeginBibliography{\small\sloppy}
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
+  citecolor=black,
   urlcolor=blue,
   pdftitle={Luận văn thạc sĩ}
 }
@@ -20,7 +28,7 @@
 \newcommand{\faculty}{Tên khoa}
 \newcommand{\department}{Tên bộ môn}
 \newcommand{\program}{Chương trình thạc sĩ}
-\newcommand{\thesistitle}{Tên luận văn thạc sĩ}
+\newcommand{\thesistitle}{Tối ưu hóa quá trình tổng hợp nano bạc bằng phương pháp polyol sử dụng glycerol và so sánh hiệu quả bảo vệ hạt của PVP và CMC}
 \newcommand{\studentname}{Họ và tên học viên}
 \newcommand{\studentid}{Mã số học viên}
 \newcommand{\supervisor}{Giảng viên hướng dẫn}
@@ -63,15 +71,54 @@ Nội dung lời cảm ơn.
 
 \chapter*{Tóm tắt}
 \addcontentsline{toc}{chapter}{Tóm tắt}
-Tóm tắt ngắn gọn mục tiêu, phương pháp, kết quả và đóng góp chính của luận văn.
+Luận văn nghiên cứu quá trình tổng hợp nano bạc bằng phương pháp polyol sử dụng glycerol và đánh giá vai trò bảo vệ hạt của polyvinylpyrrolidone (PVP) và carboxymethyl cellulose (CMC). Tóm tắt cần nêu mục tiêu, điều kiện tối ưu, các phương pháp đặc trưng hóa, kết quả so sánh và kết luận chính sau khi hoàn thành thực nghiệm.
 
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-Short English abstract of the thesis.
+\begin{english}
+\raggedright
+This thesis studies silver nanoparticle synthesis using a glycerol-based polyol method. It compares PVP and CMC as particle stabilizers. Complete this abstract with the objective, optimized conditions, characterization methods, comparative results, and conclusions after the experiments are completed.
+\end{english}
+
+\chapter*{Danh mục chữ viết tắt}
+\addcontentsline{toc}{chapter}{Danh mục chữ viết tắt}
+\begin{longtable}{@{}p{0.22\textwidth}p{0.68\textwidth}@{}}
+  AFM & Atomic force microscopy \\
+  AgNPs & Silver nanoparticles (nano bạc) \\
+  BBD & Box--Behnken design \\
+  CCD & Central composite design \\
+  CMC & Carboxymethyl cellulose \\
+  DLS & Dynamic light scattering \\
+  DoE & Design of experiments \\
+  DP & Degree of polymerization \\
+  DS & Degree of substitution \\
+  EDS/EDX & Energy-dispersive X-ray spectroscopy \\
+  EG & Ethylene glycol \\
+  FTIR & Fourier-transform infrared spectroscopy \\
+  HRTEM & High-resolution transmission electron microscopy \\
+  ISO & International Organization for Standardization \\
+  LSPR & Localized surface plasmon resonance \\
+  OFAT & One-factor-at-a-time \\
+  PVP & Polyvinylpyrrolidone \\
+  RSM & Response surface methodology \\
+  SAED & Selected-area electron diffraction \\
+  SEM & Scanning electron microscopy \\
+  SPR & Surface plasmon resonance \\
+  TEM & Transmission electron microscopy \\
+  UV--Vis & Ultraviolet-visible spectroscopy \\
+  XPS & X-ray photoelectron spectroscopy \\
+  XRD & X-ray diffraction
+\end{longtable}
 
 \tableofcontents
+\clearpage
+\renewcommand{\listfigurename}{Danh sách hình}
 \listoffigures
+\addcontentsline{toc}{chapter}{Danh sách hình}
+\clearpage
+\renewcommand{\listtablename}{Danh sách bảng}
 \listoftables
+\addcontentsline{toc}{chapter}{Danh sách bảng}
 \clearpage
 
 \pagenumbering{arabic}
@@ -80,6 +127,8 @@ Short English abstract of the thesis.
 \include{chapters/methodology}
 \include{chapters/results}
 \include{chapters/conclusion}
+
+\printbibliography[heading=bibintoc,title={Tài liệu tham khảo}]
 
 \appendix
 \include{chapters/appendix_a}
